@@ -34,3 +34,9 @@ usethis::use_vignette(name = "course_notes", title = "Course Notes")
 usethis::use_vignette(name = "course_solutions", title = "Solutions")
 usethis::use_version()
 ```
+
+Start building the website with `pkgdown`
+
+```r
+usethis::use_pkgdown()
+```
