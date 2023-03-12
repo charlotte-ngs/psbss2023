@@ -40,3 +40,21 @@ Start building the website with `pkgdown`
 ```r
 usethis::use_pkgdown()
 ```
+
+Adapt theme with 
+
+```r
+yeti_theme <- bslib::bs_theme(bootswatch = "yeti")
+bslib::bs_theme_preview(yeti_theme)
+```
+
+resulting in 
+
+```
+bs_theme_update(theme, fg = "rgb(233, 51, 224)", primary = "#27A1CA", 
+    secondary = "rgb(36, 0, 0)", base_font = font_collection(font_google("Open Sans"), 
+        "-apple-system", "BlinkMacSystemFont", "Segoe UI", font_google("Roboto"), 
+        "Helvetica Neue", "Arial", "sans-serif", "Apple Color Emoji", 
+        "Segoe UI Emoji", "Segoe UI Symbol"), bg = "#fff")
+```        
+        

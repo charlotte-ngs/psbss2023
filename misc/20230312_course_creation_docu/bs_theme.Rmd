@@ -1,0 +1,13 @@
+---
+runtime: shiny
+output:
+  html_document:
+    theme:
+      bslib: true
+---
+
+# R Markdown usage
+
+```{r}
+bslib::bs_themer()
+```

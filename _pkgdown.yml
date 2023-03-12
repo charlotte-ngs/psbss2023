@@ -3,8 +3,13 @@ title: PSB-SS2023
 url: https://charlotte-ngs.github.io/psbss2023/
 
 template:
-  params:
-    bootswatch: united
+  bootstrap: 5
+  bootswatch: yeti
+  bslib:
+    bg: "#fff"
+    fg: "#000"
+    primary: "#0d6efd"
+    secondary: "#7C6C7D"
 
 navbar:
   title:
