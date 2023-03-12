@@ -57,4 +57,7 @@ bs_theme_update(theme, fg = "rgb(233, 51, 224)", primary = "#27A1CA",
         "Helvetica Neue", "Arial", "sans-serif", "Apple Color Emoji", 
         "Segoe UI Emoji", "Segoe UI Symbol"), bg = "#fff")
 ```        
-        
+   
+  
+## Repo on Github
+Create a repo on github named the same as course name.
