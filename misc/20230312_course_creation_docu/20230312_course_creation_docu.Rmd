@@ -1,0 +1,36 @@
+---
+title: "Course Creation Docu for Pig Science Breeding (PSBSS2023)"
+author: "Peter von Rohr"
+date: "2023-03-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Disclaimer
+Documentation of course creation steps. These are taken from asmss2023 and transfered to psbss2023
+
+
+## Course Creation
+Start with the creation of an RStudio project in the terminal
+
+```bash
+CRSNAME=psbss2023
+CRSPAR=/Users/pvr/Data/Projects/Github/charlotte-ngs/${CRSNAME}_gh-root/main
+mkdir -p $CRSPAR
+cd $CRSPAR
+qrspm create $CRSNAME
+```
+
+
+Inside RStudio, the following commands are executed
+
+```r
+usethis::use_vignette(name = "course_additional_material", title = "Additional Material")
+usethis::use_vignette(name = "course_exercises", title = "Exercises")
+usethis::use_vignette(name = "course_notes", title = "Course Notes")
+usethis::use_vignette(name = "course_solutions", title = "Solutions")
+usethis::use_version()
+```
