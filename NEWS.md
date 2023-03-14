@@ -1,3 +1,7 @@
+# psbss2023 0.1.1
+
+* Course notes
+
 # psbss2023 0.1.0
 
 * Material for l01
