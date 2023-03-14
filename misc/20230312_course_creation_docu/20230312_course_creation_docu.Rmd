@@ -61,3 +61,12 @@ bs_theme_update(theme, fg = "rgb(233, 51, 224)", primary = "#27A1CA",
   
 ## Repo on Github
 Create a repo on github named the same as course name.
+
+
+## Course Notes
+Install infrastructure for course notes
+
+```bash
+cp -r ../../../pigsciencess2022_gh-root/main/pigsciencess2022/cn .
+rm -rf cn/_book
+```
