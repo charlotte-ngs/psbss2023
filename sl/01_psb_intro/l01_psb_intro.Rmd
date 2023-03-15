@@ -35,7 +35,7 @@ Date <- c("2023/03/15", "2023/04/19", "2023/04/26")
 Topic <- vector(mode = "character", length = nNrSemesterWeeks)
 # subjects per week
 Topic <- c("Extension of Breeding Programs",
-           "Genomic Selection in Pig Breeding", 
+           "Genomic Selection in Pigs and other species", 
            "Breeding Program via Aggregate Genotype")
 
 dfCnTable <- data.frame(Week, Date, Topic, stringsAsFactors = FALSE)
