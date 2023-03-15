@@ -16,6 +16,9 @@ knitr::opts_chunk$set(
 
 Additional material for Pig Science Breeding in SS 2023.
 
+
+## Slides
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 s_sl_url <- "https://charlotte-ngs.github.io/psbss2023/sl/"
 tbl_sl <- tibble::tibble(Nr = c(1),
@@ -24,5 +27,19 @@ tbl_sl <- tibble::tibble(Nr = c(1),
                            paste0("[Introduction](", s_sl_url, "l01_psb_intro.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_sl)
+```
+
+
+## OHP Pictures
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+s_ohp_url <- "https://charlotte-ngs.github.io/psbss2023/ohp/"
+tbl_ohp <- tibble::tibble(Nr = c(1),
+                         Date = c("2023-03-15"),
+                         Topic = c(
+                           paste0("[Introduction](", s_ohp_url, "20230315_ohp_l01.pdf)", collapse = "")
+                         ))
+knitr::kable(tbl_ohp)
+
 ```
 
