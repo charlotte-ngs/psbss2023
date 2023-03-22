@@ -1,6 +1,6 @@
 Package: psbss2023
 Title: Pig Science - Breeding Spring Semester 2023
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: 
     person("Peter", "von Rohr", , "peter.vonrohr@qualitasag.ch", role = c("aut", "cre"))
 Description: Collection of material for students for the part Breeding of the 
