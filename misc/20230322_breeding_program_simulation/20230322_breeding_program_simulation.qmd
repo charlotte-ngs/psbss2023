@@ -1,0 +1,63 @@
+---
+title: "Breeding Program Simulation - An Overview"
+author: "Peter von Rohr"
+date: "2023-03-22"
+format: html
+editor: visual
+bibliography: bibliography.bib
+---
+
+```{r}
+#| echo: false
+met <- rmdhelp::MendeleyExportToolR6$new()
+```
+
+
+## Disclaimer
+A summary overview over different available breeding program simulation tools is given. The following tools are considered so far
+
+* MoBPS
+* XSim2
+* AlphaSim
+* Blib
+
+The material included in this document is based on the cited publications for the different simulation tools. The tools listed above are evaluated with respect to different purposes. The purposes are 
+
+* usability in teaching context
+* testability of different research and implementation questions
+* evaluation of real breeding programs
+
+
+## MoBPS
+The reference paper for MoBPS is `r met$add("Pook2020")`. Besides the paper, we are also using information from `r met$add("Pook2020a")`. 
+
+### General Aspects
+MoBPS is primarily an R package which was later converted into a web application. At this point, we are focusing on the R package. 
+
+
+### Installation
+At the point in time of this writing, the R package MoBPS was no longer available on CRAN. The installation process has the requirement to first install
+
+* RandomFieldsUtils (>= 0.5.9)
+* Miraculix (>= 0.9.10)
+
+The package MoBPS itself can then be installed with 
+
+```r
+devtools::install_github("tpook92/MoBPS", subdir="pkg")
+```
+
+So far the package seams to be available on Windows and Linux. The use on Mac is not recommended. 
+
+
+### Initial Grouping
+One of the big challenges in simulating breeding programs is to provide the user with sufficient flexibility to perform breeding actions on certain defined groups of animals. The concepts implemented in MoBPS are based on the ideas of the gene-flow approach (`r met$add("Hill1974")`). 
+
+#### Terminology
+A __cohort__ is a group of animals sharing the same characteristics such as age, sex, genetic origin and possibly others.
+
+
+
+
+
+
