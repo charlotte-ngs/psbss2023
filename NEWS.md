@@ -1,4 +1,10 @@
+# psbss2023 0.2.1
+
+* OHP for l02
+
 # psbss2023 0.2.0
+
+* Slides l02
 
 # psbss2023 0.1.4
 
