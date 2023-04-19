@@ -12,6 +12,14 @@ knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
 ```
 
 
+## Breeding Programs
+
+```{r bprogdiag, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", fig.pos='H', out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/bprogdiag.odg")
+knitr::include_graphics(path = "odg/bprogdiag.png")
+```
+
+
 ## New Trait
 
 * New trait to be considered in breeding program
