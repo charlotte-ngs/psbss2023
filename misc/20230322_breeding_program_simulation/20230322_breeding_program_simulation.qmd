@@ -10,54 +10,92 @@ bibliography: bibliography.bib
 ```{r}
 #| echo: false
 met <- rmdhelp::MendeleyExportToolR6$new()
+# rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
 ```
 
-
 ## Disclaimer
+
 A summary overview over different available breeding program simulation tools is given. The following tools are considered so far
 
-* MoBPS
-* XSim2
-* AlphaSim
-* Blib
+-   MoBPS
+-   XSim2
+-   AlphaSim
+-   Blib
 
-The material included in this document is based on the cited publications for the different simulation tools. The tools listed above are evaluated with respect to different purposes. The purposes are 
+The material included in this document is based on the cited publications for the different simulation tools. The tools listed above are evaluated with respect to different purposes. The purposes are
 
-* usability in teaching context
-* testability of different research and implementation questions
-* evaluation of real breeding programs
-
+-   usability in teaching context
+-   testability of different research and implementation questions
+-   evaluation of real breeding programs
 
 ## MoBPS
-The reference paper for MoBPS is `r met$add("Pook2020")`. Besides the paper, we are also using information from `r met$add("Pook2020a")`. 
+
+The reference paper for MoBPS is `r met$add("Pook2020")`. Besides the paper, we are also using information from `r met$add("Pook2020a")`.
 
 ### General Aspects
-MoBPS is primarily an R package which was later converted into a web application. At this point, we are focusing on the R package. 
 
+MoBPS is primarily an R package which was later converted into a web application. At this point, we are focusing on the R package.
 
 ### Installation
+
 At the point in time of this writing, the R package MoBPS was no longer available on CRAN. The installation process has the requirement to first install
 
-* RandomFieldsUtils (>= 0.5.9)
-* Miraculix (>= 0.9.10)
+-   RandomFieldsUtils (\>= 0.5.9)
+-   Miraculix (\>= 0.9.10)
 
-The package MoBPS itself can then be installed with 
+The package MoBPS itself can then be installed with
 
-```r
+``` r
 devtools::install_github("tpook92/MoBPS", subdir="pkg")
 ```
 
-So far the package seams to be available on Windows and Linux. The use on Mac is not recommended. 
-
+So far the package seams to be available on Windows and Linux. The use on Mac is not recommended.
 
 ### Initial Grouping
-One of the big challenges in simulating breeding programs is to provide the user with sufficient flexibility to perform breeding actions on certain defined groups of animals. The concepts implemented in MoBPS are based on the ideas of the gene-flow approach (`r met$add("Hill1974")`). 
 
-#### Terminology
-A __cohort__ is a group of animals sharing the same characteristics such as age, sex, genetic origin and possibly others.
+One of the big challenges in simulating breeding programs is to provide the user with sufficient flexibility to perform breeding actions on certain defined groups of animals. The concepts implemented in MoBPS are based on the ideas of the gene-flow approach (`r met$add("Hill1974")`).
+
+### Terminology
+
+A **cohort** is a group of animals sharing the same characteristics such as age, sex, genetic origin and possibly others.
+
+Newly generated cohorts will automatically be assigned to a **generation**. Selection of all cohorts of a given generation can be done via the parameter **gen**.
+
+Groups of individuals can be selected via the parameter **database**. A database consists of
+
+1.  generation
+2.  sex (1: male, 2: female)
+3.  number of the first individual to consider
+4.  number of the last individual to consider
+
+The above described mechanisms of selecting individuals can also be combined. As an example, the following parameter statement
+
+``` r
+(Gen = 4:5, database = matrix(c(3,1,21,50), ncol=4), cohorts=”Founder”)
+```
+
+selects
+
+-   all individuals from generations four and five,
+-   male individuals with numbers $21$ to $50$ of generation three and
+-   the complete founder cohort.
+
+Parameter statements such as shown above will be used for selecting animals for functions related to breeding value estimation (**bve.**) or for indicating which cohorts are phenotyped (**phen.**) or to determine the individuals for which information should be exported during the simulation.
+
+### Creation of the Starting Population
+
+The input to the simulation of a breeding process is a starting population. This is created by the function `creating.diploid()`.
 
 
+#### Importing and Generation Datasets
+In case there is haplotype data available for the founder population, then this can be imported using the parameter **dataset**. 
+
+Otherwise data can be generated based on the number of individuals (**nindi**) and the number of SNP locations (**nsnp**). The simulation of the base data can either be directed by certain keywords ("all0", "allhetero", "random" and "homorandom"). The modes based on random sampling use Beta distributions with specified allele frequencies. The probability density functions of the Beta distributions are shown below.  
 
 
-
+```{r cumdist, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/cumdist.odg")
+knitr::include_graphics(path = "odg/cumdist.png")
+```
 

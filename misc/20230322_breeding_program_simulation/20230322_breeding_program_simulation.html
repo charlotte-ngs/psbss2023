@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -118,6 +118,7 @@ div.csl-indent {
 <link href="20230322_breeding_program_simulation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="20230322_breeding_program_simulation_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -196,9 +197,40 @@ div.csl-indent {
 <section id="initial-grouping" class="level3">
 <h3 class="anchored" data-anchor-id="initial-grouping">Initial Grouping</h3>
 <p>One of the big challenges in simulating breeding programs is to provide the user with sufficient flexibility to perform breeding actions on certain defined groups of animals. The concepts implemented in MoBPS are based on the ideas of the gene-flow approach (<span class="citation" data-cites="Hill1974">(<a href="#ref-Hill1974" role="doc-biblioref">Hill 1974</a>)</span>).</p>
-<section id="terminology" class="level4">
-<h4 class="anchored" data-anchor-id="terminology">Terminology</h4>
+</section>
+<section id="terminology" class="level3">
+<h3 class="anchored" data-anchor-id="terminology">Terminology</h3>
 <p>A <strong>cohort</strong> is a group of animals sharing the same characteristics such as age, sex, genetic origin and possibly others.</p>
+<p>Newly generated cohorts will automatically be assigned to a <strong>generation</strong>. Selection of all cohorts of a given generation can be done via the parameter <strong>gen</strong>.</p>
+<p>Groups of individuals can be selected via the parameter <strong>database</strong>. A database consists of</p>
+<ol type="1">
+<li>generation</li>
+<li>sex (1: male, 2: female)</li>
+<li>number of the first individual to consider</li>
+<li>number of the last individual to consider</li>
+</ol>
+<p>The above described mechanisms of selecting individuals can also be combined. As an example, the following parameter statement</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">Gen =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">database =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">21</span>,<span class="dv">50</span>), <span class="at">ncol=</span><span class="dv">4</span>), <span class="at">cohorts=</span>”Founder”)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>selects</p>
+<ul>
+<li>all individuals from generations four and five,</li>
+<li>male individuals with numbers <span class="math inline">\(21\)</span> to <span class="math inline">\(50\)</span> of generation three and</li>
+<li>the complete founder cohort.</li>
+</ul>
+<p>Parameter statements such as shown above will be used for selecting animals for functions related to breeding value estimation (<strong>bve.</strong>) or for indicating which cohorts are phenotyped (<strong>phen.</strong>) or to determine the individuals for which information should be exported during the simulation.</p>
+</section>
+<section id="creation-of-the-starting-population" class="level3">
+<h3 class="anchored" data-anchor-id="creation-of-the-starting-population">Creation of the Starting Population</h3>
+<p>The input to the simulation of a breeding process is a starting population. This is created by the function <code>creating.diploid()</code>.</p>
+<section id="importing-and-generation-datasets" class="level4">
+<h4 class="anchored" data-anchor-id="importing-and-generation-datasets">Importing and Generation Datasets</h4>
+<p>In case there is haplotype data available for the founder population, then this can be imported using the parameter <strong>dataset</strong>.</p>
+<p>Otherwise data can be generated based on the number of individuals (<strong>nindi</strong>) and the number of SNP locations (<strong>nsnp</strong>). The simulation of the base data can either be directed by certain keywords (“all0”, “allhetero”, “random” and “homorandom”). The modes based on random sampling use Beta distributions with specified allele frequencies. The probability density functions of the Beta distributions are shown below.</p>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
+<div class="cell-output-display">
+<p><img src="odg/cumdist.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 
 </section>
 </section>

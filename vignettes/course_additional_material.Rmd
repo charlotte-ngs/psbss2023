@@ -21,12 +21,14 @@ Additional material for Pig Science Breeding in SS 2023.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 s_sl_url <- "https://charlotte-ngs.github.io/psbss2023/sl/"
-tbl_sl <- tibble::tibble(Nr = c(1, 2),
+tbl_sl <- tibble::tibble(Nr = c(1, 2, 3),
                          Date = c("2023-03-15",
-                                  "2023-04-19"),
+                                  "2023-04-19",
+                                  "2023-04-26"),
                          Topic = c(
                            paste0("[Introduction](", s_sl_url, "l01_psb_intro.pdf)", collapse = ""),
-                           paste0("[Genomic Selection For a New Trait](", s_sl_url, "l02_psb_modsel_varcomp.pdf)", collapse = "")
+                           paste0("[Genomic Selection For a New Trait](", s_sl_url, "l02_psb_modsel_varcomp.pdf)", collapse = ""),
+                           paste0("[Aggregate Genotype](", s_sl_url, "l03_psb_pbv.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_sl)
 ```
