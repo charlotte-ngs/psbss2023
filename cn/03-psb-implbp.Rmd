@@ -72,10 +72,11 @@ At this stage of our analysis, we are ignoring all traits related to reproductio
 
 
 ## Genetic Evaluation {#gel-implbp-geneval}
-Once we have determined the traits of economic interest as described in subsection \@ref(gel-implbp-dettrint), we can start to have a look at the genetic part of our analysis of the breeding program. This is done in a genetic evaluation which consists of two parts
+Once we have determined the traits of economic interest as described in subsection \@ref(gel-implbp-dettrint), we can start to have a look at the genetic part of our analysis of the breeding program. This is done in a genetic evaluation which consists of three parts
 
-1. Variance components estimation
-2. Prediction of breeding values.
+1. Model selection
+2. Variance components estimation
+3. Prediction of breeding values.
 
 In a practical analysis both parts are using linear mixed effect models with the traits of interest as response variables ($y$) and other characteristics as predictor variables ($x$). The difference between the two evaluation parts are the results that are of interest. In the first part we are primarily looking for the estimates of the variance components in the model. The second part produces predictions of the breeding values for all breeding animals.
 
@@ -84,7 +85,13 @@ Depending on the number of predictor variables that are available in the dataset
 In the chapters that follow, we are having a closer look at how to do the model selection and how to perform the two parts of the genetic evaluation.
 
 
-
+<!-- ------------------------------------------------------------------------ --
+  --                                                                          --    
+  -- TODO: Continue with more details on genetic evaluation ...               --
+  -- TODO: Include selection index theory on how to combine different traits  --
+  --                                                                          --    
+  -- ------------------------------------------------------------------------ -->
+  
 
 
 

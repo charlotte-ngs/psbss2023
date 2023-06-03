@@ -1,0 +1,73 @@
+---
+title: "Exam Questions Pig Science Breeding"
+author: "Peter von Rohr"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    reference_docx: docx/exam_questions_template.docx
+  pdf_document:
+    includes:
+      in_header: tex/header.tex
+  html_document:
+    df_print: paged
+---
+
+\newcommand{\points}[1]
+{\begin{flushright}\textbf{#1}\end{flushright}}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+```
+
+```{r points}
+n_points_q1 <- 8
+n_points_q2 <- 6
+n_points_q3 <- 6
+n_points_q4 <- 0
+n_points_q5 <- 0
+n_points_q6 <- 0
+n_nr_q <- 3
+n_points_total <- n_points_q1 + n_points_q2 + n_points_q3 + n_points_q4 + n_points_q5
+tbl_points <- tibble::tibble(Question = c(as.character(1:n_nr_q), "Total"),
+                             `Maximum Points` = c(n_points_q1,
+                                                  n_points_q2,
+                                                  n_points_q3,
+                                                  n_points_total))
+knitr::kable(tbl_points,
+             booktabs = TRUE,
+             longtable = TRUE)
+```
+
+
+# Question 1
+What are the main goals of livestock breeding? Compare these goals to the main goals of livestock production. What potential conflicts might occur between breeding and production? How can these conflicts be resolved?
+
+_Was sind die hauptsächlichen Ziele der Nutztierzucht? Vergleichen Sie diese Ziel mit den Zielen der Nutztierproduktion. Welches sind potenzielle Konflikte, welche zwischen Zucht und Produktion auftreten können? Wie können diese Konflikte gelöst werden?_
+
+```{r, echo=FALSE, results='asis'}
+cat("__", n_points_q1, "__", "\n", sep = "")
+```
+
+
+
+# Question 2
+What are the two types of breeding programs and what are their main focus? In which geographic regions do these types of breeding programs mainly occur
+
+_Wie lauten die zwei Typen von Zuchtprogrammen und was ist jeweilen deren hauptsächlicher Focus? In welchen geographischen Regionen treten diese Zuchtprogramme auf?_
+
+```{r, echo=FALSE, results='asis'}
+cat("__", n_points_q2, "__", "\n", sep = "")
+```
+
+
+# Question 3
+In a breeding goal that aims at improving different traits in a livestock population at the same time, the different traits can be combined in an index. The weighting factors of the different traits can be determined either by __Desired Gains__ or by __Economic Values__. Describe the methods of Desired Gains and Economic Values and list their advantages and their disadvantages. 
+
+_In einem Zuchtziel in welchem mehrere Merkmale in einer Nutztierpopulation gleichzeitig verbessert werden sollen, können die Merkmale in einem Index kombiniert werden. Die Gewichtungsfaktoren im Index können entweder mit **Desired Gains** oder mit **Wirtschaftlichen Gewichten** bestimmt werden. Beschreiben Sie die Methoden 'Desired Gains'  und 'Wirtschaftliche Gewichte' und listen Sie deren Vor- und Nachteile auf._
+
+```{r, echo=FALSE, results='asis'}
+cat("__", n_points_q3, "__", "\n", sep = "")
+```
+

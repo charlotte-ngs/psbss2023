@@ -1,0 +1,107 @@
+---
+title: "Solutions to Exam Questions Pig Science Breeding"
+author: "Peter von Rohr"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    includes:
+      in_header: tex/header.tex
+  word_document:
+    reference_docx: docx/exam_questions_template.docx
+  html_document:
+    df_print: paged
+---
+
+\newcommand{\points}[1]
+{\begin{flushright}\textbf{#1}\end{flushright}}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+```
+
+```{r points}
+n_points_q1 <- 8
+n_points_q2 <- 6
+n_points_q3 <- 6
+n_points_q4 <- 0
+n_points_q5 <- 0
+n_points_q6 <- 0
+n_nr_q <- 3
+n_points_total <- n_points_q1 + n_points_q2 + n_points_q3 + n_points_q4 + n_points_q5
+tbl_points <- tibble::tibble(Question = c(as.character(1:n_nr_q), "Total"),
+                             `Maximum Points` = c(n_points_q1,
+                                                  n_points_q2,
+                                                  n_points_q3,
+                                                  n_points_total))
+knitr::kable(tbl_points,
+             booktabs = TRUE,
+             longtable = TRUE)
+```
+
+
+# Question 1
+What are the main goals of livestock breeding? Compare these goals to the main goals of livestock production. What potential conflicts might occur between breeding and production? How can these conflicts be resolved?
+
+_Was sind die hauptsächlichen Ziele der Nutztierzucht? Vergleichen Sie diese Ziel mit den Zielen der Nutztierproduktion. Welches sind potenzielle Konflikte, welche zwischen Zucht und Produktion auftreten können? Wie können diese Konflikte gelöst werden?_
+
+```{r, echo=FALSE, results='asis'}
+cat("__", n_points_q1, "__", "\n", sep = "")
+```
+
+## Solution
+
+* Main goals of livestock breeding
+    + change a population at the genetic level by selection and mating
+    + efficient transmission of genetic potential from parents to offspring
+    
+* Main goals of livestock production
+    + efficient production of goods produced by livestock animals
+    + use farm resources as efficiently as possible to produce a marketable product
+    
+* Conflicts between breeding and production
+    + in breeding young animals are the most valuable, because they are required for an efficient transmission of genetic potential. New technologies have to be used because they allow for a more efficient transmission of genetic potential from parents to offspring
+    + in production older animal become more valuable, because their higher production revenue covers more of the fixed costs and make them more profitable. Production system is largely determined by economic efficiency and are only used if they generated extra profitability
+    
+* Resolution of conflicts
+    + In cattle: split herds in to younger breeding animals and older production animals. Use systems such as beef-on-dairy
+    + In pigs: separate herds for breeding and production
+
+
+# Question 2
+What are the two types of breeding programs and what are their main focus? In which geographic regions do these types of breeding programs mainly occur
+
+_Wie lauten die zwei Typen von Zuchtprogrammen und was ist jeweilen deren hauptsächlicher Focus? In welchen geographischen Regionen treten diese Zuchtprogramme auf?_
+
+```{r, echo=FALSE, results='asis'}
+cat("__", n_points_q2, "__", "\n", sep = "")
+```
+
+## Solution
+
+1. Breeding programs which focus on selection response. Their main focus is to use the scarce resources as efficiently as possible.
+2. Breeding programs which focus on providing optimal services to the members of the respective breeding organisation. Such programs are implemented by organisations which behave like service companies which treat their members as customers and the main focus is directed according to the whishes of the members of the breeding organisation.
+
+Geographic regions:
+
+1. Regions with poor or scarce resources (Africa). Regions with large farms (Eastern Europe, Australia, New Zealand)
+2. Western Europe
+
+
+# Question 3
+In a breeding goal that aims at improving different traits in a livestock population at the same time, the different traits can be combined in an index. The weighting factors of the different traits can be determined either by __Desired Gains__ or by __Economic Values__. Describe the methods of Desired Gains and Economic Values and list their advantages and their disadvantages. 
+
+_In einem Zuchtziel in welchem mehrere Merkmale in einer Nutztierpopulation gleichzeitig verbessert werden sollen, können die Merkmale in einem Index kombiniert werden. Die Gewichtungsfaktoren im Index können entweder mit **Desired Gains** oder mit **Wirtschaftlichen Gewichten** bestimmt werden. Beschreiben Sie die Methoden 'Desired Gains'  und Wirtschaftliche Gewichte und listen Sie deren Vor- und Nachteile auf._
+
+```{r, echo=FALSE, results='asis'}
+cat("__", n_points_q3, "__", "\n", sep = "")
+```
+
+## Solution
+
+* Desired Gains: organisation responsible for breeding goal determines how much selection response is to be achieved in the single traits. Based on these desired gains, the index weights are calculated. The disadvantage of this method is that it ignores economic context of production and hence breeders often select the wrong animals from the perspective of livestock producers.
+
+* Economic Values: Index weights are determined based on marginal changes of profit caused by small changes of the single traits. The big advantage is that economic context is considered in the input of the computation of economic values. The computations are dependent on the simulation of a production model. Errors or missing details in this production model can have negative effects on the results. The system as such works only for traits where the trait level has a linear relationship to the profit. Traits with an intermediate optimum are more difficult to be considered. 
+
+
